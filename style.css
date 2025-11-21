@@ -1,0 +1,160 @@
+:root{
+  --accent:#e25b17;
+  --muted:#6d6d6d;
+  --card-bg:#fff;
+  --page-bg:#f6f6f6;
+  --max-width:1200px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--page-bg);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{width:92%;max-width:var(--max-width);margin:0 auto}
+
+/* header */
+.site-header{
+  background:var(--accent);
+  color:white;
+  padding:14px 0;
+  position:sticky;
+  top:0;
+  z-index:60;
+  box-shadow:0 2px 0 rgba(0,0,0,0.06);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-weight:700;letter-spacing:0.6px}
+.hamburger{background:none;border:0;color:white;font-size:20px;cursor:pointer;padding: auto;}
+
+/* hero */
+.hero{
+  background-image:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('./assests/view-ready-eat-delicious-meal-go.jpg');
+  background-size:cover;
+  color:white;
+  padding:70px 0;
+}
+.hero-inner{text-align:center;max-width:900px;margin:0 auto}
+.search-wrap{display:inline-flex;align-items:center;background:white;border-radius:40px;padding:10px 12px;margin-bottom:18px;box-shadow:0 6px 18px rgba(0,0,0,0.2)}
+.search-wrap input{border:0;outline:0;padding:14px 20px;width:320px;border-radius:40px;font-size:15px}
+.search-wrap button{background:var(--accent);border:0;color:white;padding:10px 14px;border-radius:50px;margin-left:10px;cursor:pointer}
+.hero h1{font-size:34px;margin:4px 0 10px;letter-spacing:0.6px}
+.muted{color:rgba(255,255,255,0.85);font-size:13px}
+
+/* sections */
+.section-title{font-size:20px;margin:36px 0 16px;letter-spacing:2px}
+.grid{display:grid;gap:18px}
+.meals-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.categories-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+
+/* card */
+.card{
+  background:var(--card-bg);
+  padding:8px;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.card img{width:100%;height:120px;object-fit:cover;border-radius:4px}
+.card .card-body{padding:10px 6px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.card .title{font-size:14px;font-weight:700;margin:6px 0}
+.card .subtitle{font-size:12px;color:var(--muted)}
+
+/* tag badge */
+.badge{
+  position:absolute;background:var(--accent);color:white;padding:6px 8px;border-radius:4px;font-size:11px;font-weight:700;
+  transform:translateY(-8px);right:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12)
+}
+.card-wrap{position:relative}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:flex-start;justify-content:center;padding:40px;z-index:80;opacity:0;pointer-events:none;transition:opacity .18s}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-content{background:#fff;border-radius:6px;max-width:900px;width:100%;padding:20px;box-shadow:0 18px 60px rgba(0,0,0,0.35);position:relative}
+.close-btn{position:absolute;right:12px;top:12px;border:0;background:none;font-size:20px;cursor:pointer}
+
+/* meal details */
+.meal-grid{display:grid;grid-template-columns:300px 1fr;gap:18px}
+.meal-grid img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+.meal-meta{padding:6px 0}
+.ingredients{background:var(--accent);color:white;padding:12px;border-radius:6px}
+.measure-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.measure{background:#fff;border-radius:6px;padding:6px 8px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+
+/* toast */
+.toast{position:fixed;right:20px;bottom:20px;background:#333;color:white;padding:10px 14px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+.hidden{display:none}
+
+/* ===== SIDE MENU (hamburger categories) ===== */
+.side-menu{
+  position:fixed;
+  top:0;
+  right:0;
+  width:260px;
+  max-width:80%;
+  height:100%;
+  background:#fff;
+  box-shadow:-2px 0 18px rgba(0,0,0,0.18);
+  transform:translateX(100%);
+  transition:transform .22s ease-out;
+  z-index:75;
+  display:flex;
+  flex-direction:column;
+  margin-right: auto;
+}
+.side-menu[aria-hidden="false"]{
+  transform:translateX(0);
+}
+.side-menu-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 18px;
+  border-bottom:1px solid #eee;
+}
+.side-menu-title{
+  font-weight:600;
+  letter-spacing:1px;
+}
+.side-close{
+  border:0;
+  background:none;
+  font-size:20px;
+  cursor:pointer;
+}
+.side-list{
+  list-style:none;
+  margin:0;
+  padding:8px 0;
+  overflow-y:auto;
+  flex:1;
+}
+.side-list li{
+  padding:10px 18px;
+  border-bottom:1px solid #f2f2f2;
+  font-size:14px;
+  cursor:pointer;
+}
+.side-list li:hover{
+  background:#f6f6f6;
+  color:var(--accent);
+}
+
+/* responsive */
+@media (max-width:900px){
+  .meal-grid{grid-template-columns:1fr}
+  .search-wrap input{width:220px}
+}
+
+@media (max-width:520px){
+  .categories-grid{grid-template-columns:repeat(2,1fr)}
+  .meals-grid{grid-template-columns:repeat(2,1fr)}
+  .search-wrap input{width:140px}
+}

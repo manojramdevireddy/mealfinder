@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meal Finder — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">🍽️ <strong>MEAL FINDER</strong></div>
+      <button id="menuToggle" class="hamburger" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="search-wrap">
+          <input id="searchInput" placeholder="Search recipes here ..." />
+        <button id="searchBtn" class="search-icon-btn">
+    <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        </div>
+    </div>
+
+
+        <h1>What are your favorite cuisines?</h1>
+        <p class="muted">PERSONALIZE YOUR EXPERIENCE</p>
+      </div>
+    </section>
+    <section class="categories-section container">
+      <h2 class="section-title">CATEGORIES</h2>
+      <div id="categoriesGrid" class="grid categories-grid"></div>
+    </section>
+  </main>
+
+  <!-- Meal detail modal -->
+  <div id="mealModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn" aria-label="Close">✕</button>
+      <div id="mealDetail"></div>
+    </div>
+  </div>
+
+  <!-- Side category drawer -->
+  <div id="sideMenu" class="side-menu" aria-hidden="true">
+    <div class="side-menu-header">
+      <span class="side-menu-title">Categories</span>
+      <button id="closeSideMenu" class="side-close" aria-label="Close menu">✕</button>
+    </div>
+    <ul id="sideCategories" class="side-list"></ul>
+  </div>
+
+  <!-- Simple notifications/spinner -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
