@@ -1,63 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meal Finder — Demo</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Meal Finder</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">🍽️ <strong>MEAL FINDER</strong></div>
-      <button id="menuToggle" class="hamburger" aria-label="Open menu">☰</button>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="left">
+      <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+      <div class="brand" id="homeBtn">MEAL FINDER</div>
+    </div>
+
+    <div class="right">
+      <i class="fa-solid fa-bars" id="menuBtn" aria-label="Open menu" title="Open menu"></i>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="search-wrap">
-          <input id="searchInput" placeholder="Search recipes here ..." />
-        <button id="searchBtn" class="search-icon-btn">
-    <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        </div>
+  <!-- SIDE MENU -->
+  <nav id="sideMenu" class="side-menu" aria-hidden="true" aria-label="Categories Menu">
+    <div class="close-wrap">
+      <button id="closeBtn" class="close-btn" aria-label="Close menu">&times;</button>
     </div>
 
+    <ul>
+      <li>Beef</li>
+      <li>Chicken</li>
+      <li>Dessert</li>
+      <li>Lamb</li>
+      <li>Miscellaneous</li>
+      <li>Pasta</li>
+      <li>Pork</li>
+      <li>Seafood</li>
+      <li>Side</li>
+      <li>Starter</li>
+      <li>Vegan</li>
+      <li>Vegetarian</li>
+      <li>Breakfast</li>
+      <li>Goat</li>
+    </ul>
+  </nav>
 
-        <h1>What are your favorite cuisines?</h1>
-        <p class="muted">PERSONALIZE YOUR EXPERIENCE</p>
-      </div>
-    </section>
-    <section class="categories-section container">
-      <h2 class="section-title">CATEGORIES</h2>
-      <div id="categoriesGrid" class="grid categories-grid"></div>
-    </section>
+  <!-- Optional overlay -->
+  <div id="overlay" class="overlay" hidden></div>
+
+  <!-- SEARCH BANNER -->
+  <section class="search-banner" role="region" aria-label="Search meals">
+    <div class="search-area" role="search">
+      <input id="searchInput" type="text" placeholder="Search recipes here..." aria-label="Search recipes">
+      <button id="searchBtn" class="search-btn" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+
+    <h2 class="search-title">What are your favourite cuisines?</h2>
+    <p class="search-subtitle">Personalize your experience</p>
+  </section>
+
+  <!-- MEALS (card above categories) -->
+  <section class="meals-section">
+    <h2 class="meals-title">Meals</h2>
+    <div id="mealsContainer" class="meals-grid" aria-live="polite"></div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <h1 class="head-title"><u>CATE</u>GORIES</h1>
+
+  <main class="container">
+    <div id="cardsContainer" class="cards-container" aria-label="Categories grid"></div>
   </main>
 
-  <!-- Meal detail modal -->
-  <div id="mealModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button id="closeModal" class="close-btn" aria-label="Close">✕</button>
-      <div id="mealDetail"></div>
-    </div>
-  </div>
 
-  <!-- Side category drawer -->
-  <div id="sideMenu" class="side-menu" aria-hidden="true">
-    <div class="side-menu-header">
-      <span class="side-menu-title">Categories</span>
-      <button id="closeSideMenu" class="side-close" aria-label="Close menu">✕</button>
-    </div>
-    <ul id="sideCategories" class="side-list"></ul>
-  </div>
+  
 
-  <!-- Simple notifications/spinner -->
-  <div id="toast" class="toast hidden"></div>
-
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
