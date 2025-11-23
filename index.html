@@ -1,83 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Meal Finder</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="left">
       <i class="fa-solid fa-utensils" aria-hidden="true"></i>
       <div class="brand" id="homeBtn">MEAL FINDER</div>
     </div>
-
     <div class="right">
-      <i class="fa-solid fa-bars" id="menuBtn" aria-label="Open menu" title="Open menu"></i>
+      <i class="fa-solid fa-bars" id="menuBtn" aria-label="Open menu"></i>
     </div>
   </header>
 
-  <!-- SIDE MENU -->
-  <nav id="sideMenu" class="side-menu" aria-hidden="true" aria-label="Categories Menu">
-    <div class="close-wrap">
-      <button id="closeBtn" class="close-btn" aria-label="Close menu">&times;</button>
-    </div>
-
-    <ul>
-      <li>Beef</li>
-      <li>Chicken</li>
-      <li>Dessert</li>
-      <li>Lamb</li>
-      <li>Miscellaneous</li>
-      <li>Pasta</li>
-      <li>Pork</li>
-      <li>Seafood</li>
-      <li>Side</li>
-      <li>Starter</li>
-      <li>Vegan</li>
-      <li>Vegetarian</li>
-      <li>Breakfast</li>
-      <li>Goat</li>
+  <nav id="sideMenu" class="side-menu" aria-hidden="true">
+    <div class="close-wrap"><button id="closeBtn" class="close-btn">&times;</button></div>
+    <ul id="menuList">
+      <li>Beef</li><li>Chicken</li><li>Dessert</li><li>Lamb</li><li>Miscellaneous</li>
+      <li>Pasta</li><li>Pork</li><li>Seafood</li><li>Side</li><li>Starter</li>
+      <li>Vegan</li><li>Vegetarian</li><li>Breakfast</li><li>Goat</li>
     </ul>
   </nav>
 
-  <!-- Optional overlay -->
   <div id="overlay" class="overlay" hidden></div>
 
-  <!-- SEARCH BANNER -->
-  <section class="search-banner" role="region" aria-label="Search meals">
-    <div class="search-area" role="search">
-      <input id="searchInput" type="text" placeholder="Search recipes here..." aria-label="Search recipes">
-      <button id="searchBtn" class="search-btn" aria-label="Search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+  <section class="search-banner">
+    <div class="search-area">
+      <input id="searchInput" type="text" placeholder="Search recipes here..." />
+      <button id="searchBtn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
-
-    <h2 class="search-title">What are your favourite cuisines?</h2>
+    <h2 class="search-title">What are your favorite cuisines?</h2>
     <p class="search-subtitle">Personalize your experience</p>
   </section>
 
-  <!-- MEALS (card above categories) -->
+  <!-- Category details & meal details area (shown above categories) -->
+  <section id="categoryDetails" class="category-details" hidden></section>
+
   <section class="meals-section">
     <h2 class="meals-title">Meals</h2>
-    <div id="mealsContainer" class="meals-grid" aria-live="polite"></div>
+    <div id="mealsContainer" class="meals-grid"></div>
   </section>
 
-  <!-- CATEGORIES -->
   <h1 class="head-title"><u>CATE</u>GORIES</h1>
 
   <main class="container">
-    <div id="cardsContainer" class="cards-container" aria-label="Categories grid"></div>
+    <div id="cardsContainer" class="cards-container"></div>
   </main>
 
-
-  
-
-  <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
