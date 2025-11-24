@@ -195,7 +195,7 @@ body { font-family: Arial, sans-serif; background: #fff; color: #222; }
 .meal-title { font-size: 14px; margin: 0; font-weight: 700; }
 
 /* small states */
-.no-found { color: #fff; background: #E85A0C; padding: 10px; border-radius: 6px; display: inline-block; }
+.no-found { color: #000000; background: #E85A0C; padding: 10px; border-radius: 6px; display: inline-block; }
 
 /* responsive tweaks */
 @media (max-width: 720px) {
